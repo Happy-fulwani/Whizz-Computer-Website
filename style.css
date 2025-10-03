@@ -1,0 +1,407 @@
+/* GLOBAL RESET AND FONT SETUP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Poppins Font लागू */
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+/* HEADER & NAVIGATION STYLING */
+.main-header {
+    background: #0d1a26; /* Dark Blue */
+    color: #fff;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00ffaa; /* Neon Accent */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover, .main-nav ul li a.active {
+    color: #00ffaa;
+}
+
+.menu-toggle {
+    display: none; /* Hide button on desktop */
+}
+
+/* HERO SECTION STYLING */
+.hero-section {
+    /* Image path check: सुनिश्चित करें कि hero-bg.jpg आपके images फोल्डर में है */
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover; 
+    background-color: #334e68; /* Fallback color */
+    color: #fff;
+    padding: 8rem 5%; /* Padding बढ़ाया गया */
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow जोड़ा गया */
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #00ffaa;
+    color: #0d1a26;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #00e699;
+}
+
+/* FEATURES SECTION STYLING */
+.features {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.features h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+/* Icon Styling */
+.feature-icon, .service-icon {
+    font-size: 2.5rem; 
+    color: #00ffaa; 
+    margin-bottom: 10px;
+    display: block;
+    text-align: center; 
+}
+
+.feature-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    /* Box Shadow and Hover Effect for attraction */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
+    text-align: center; /* Icons ke liye Center align kiya gaya */
+    transition: all 0.3s ease; 
+}
+
+.feature-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* CALL TO ACTION BAR STYLING */
+.cta-bar {
+    background: #334e68;
+    color: #fff;
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.cta-bar h2 {
+    margin-bottom: 1.5rem;
+}
+
+.cta-button-alt {
+    display: inline-block;
+    background: #fff;
+    color: #334e68;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.cta-button-alt:hover {
+    background: #ddd;
+}
+
+/* FOOTER STYLING */
+.main-footer {
+    background: #0d1a26;
+    color: #aaa;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* ==================
+   RESPONSIVE DESIGN 
+   ================== */
+@media (max-width: 768px) {
+    
+    .main-nav {
+        /* Hide menu by default on mobile */
+        display: none; 
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Below the header */
+        left: 0;
+        background: #0d1a26;
+    }
+
+    .main-nav.active {
+        display: block; /* Show menu when active */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .main-nav ul li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #1a334d;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block; /* Show button on mobile */
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ==================
+   SECONDARY PAGE STYLES 
+   ================== */
+
+.page-content {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-content h1 {
+    font-size: 2.5rem;
+    color: #0d1a26;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.page-content .intro {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* SERVICES PAGE STYLING */
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.service-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: center; /* Icons ke liye Center align kiya gaya */
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h2 {
+    color: #334e68;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #00ffaa;
+    padding-bottom: 5px;
+}
+
+.price {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #00ffaa;
+}
+
+/* CONTACT PAGE STYLING */
+.contact-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-info {
+    padding: 20px;
+    background: #f0f8ff; /* Light accent background */
+    border-radius: 4px;
+}
+
+.contact-info h3 {
+    color: #334e68;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* ABOUT PAGE STYLING */
+.about-story {
+    margin-bottom: 3rem;
+}
+
+.about-story h2, .team-section h2 {
+    color: #334e68;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.about-story ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.about-story li {
+    background: #fff;
+    padding: 10px 15px;
+    border-left: 5px solid #00ffaa;
+    margin-bottom: 10px;
+}
+
+.team-member-card {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #00ffaa;
+}
+
+
+/* Responsive adjustment for Contact Page */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Stack columns vertically on mobile */
+    }
+}
+
+/* ==================
+   SCROLL TO TOP BUTTON STYLES 
+   ================== */
+
+#scrollToTopBtn {
+    display: none; /* Hide by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px;
+    right: 20px;
+    z-index: 999; /* Stay on top of other elements */
+    border: none;
+    outline: none;
+    background-color: #334e68; /* Dark Blue */
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #00ffaa; /* Neon Accent on hover */
+}
